@@ -1,0 +1,168 @@
+.center{
+    width: 1226px;
+    margin: 0 auto;
+}
+
+
+/* 底部样式*/
+.bottomm{
+    padding: 27px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.bottomm li{
+    float: left;
+    line-height: 25px;
+    font-size: 16px;
+    width: 242.748px;
+    text-align: center;
+    border-left: 1px solid #e0e0e0;
+}
+.bottomm li:nth-child(1){
+    border-left: none;
+}
+footer::after{
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    content: "";
+}
+.bottomm ul::after{
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    content: "";
+}
+.bottomm a{
+    color: #616161;
+    transition: color .5s;
+}
+.bottomm i{
+    margin-right: 6px;
+    font-size: 24px;
+    line-height: 24px;
+    vertical-align: -4px;
+}
+.bottomm li:hover a{
+    color: #ff6700;
+}
+.baopl{
+    padding: 40px 0;
+}
+.baopl::after{
+    display: block;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    content: "";
+}
+.baopl dl{
+    float: left;
+    width: 160px;
+}
+.baopl dt{
+    margin: -1px 0 26px;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #424242;
+}
+.baopl dt{
+    color: #424242;
+}
+.baopl dd{
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: #757575;
+}
+.baopl dd a{
+    color: #757575;
+    transition: 0.5s;
+}
+.baopl-2{
+    float: right;
+    width: 251px;
+    border-left: 1px solid #e0e0e0;
+    text-align: center;
+    color: #616161;
+}
+.pp3:hover {
+    background-color: #f25807;
+    border-color: #f25807;
+    color: white;
+}
+.baopl dd:hover a{
+    color: #ff6700;
+}
+.pp1{
+    margin: 0 0 5px;
+    font-size: 22px;
+    line-height: 1;
+    color: #ff6700;
+}
+.pp2{
+    margin: 0 0 16px;
+}
+.pp3{
+    width: 118px;
+    line-height: 28px;
+    color: #ff6700;
+    border: 1px solid #ff6700;
+    display: inline-block;
+    text-align: center;
+}
+.dibu{
+    padding: 30px 0;
+    background: #fafafa;
+    position: relative;
+}
+.dibu::after{
+    display: block;
+    height: 0;
+    clear: both;
+    content: "";
+    overflow: hidden;
+    visibility: hidden;
+}
+.dibu1 a:hover{
+    color: #ff6700;
+}
+.logo-3{
+    position: absolute;
+    width: 57px;
+    height: 57px;
+    background: url(../img/logo.png)no-repeat 50% 50%;
+    text-indent: -66em;
+    display: block;
+}
+.dibu1{
+    padding-left: 67px;
+}
+.p22 a{
+    color: #757575;
+}
+.p11{
+    color: #b0b0b0;
+}
+.p11 a{
+    color: #b0b0b0;
+}
+.dibu-2{
+    padding-left: 67px;
+    margin: 4px 0 0;
+}
+.dibu-2 img{
+    width: auto;
+    height: 28px;
+}
+.bottom-logo{
+    width: 267px;
+    margin: 30px auto 0;
+    background: url(../img/slogan2016.png)no-repeat center 0;
+    text-indent: -66em;
+    display: block;
+    height: 20px;
+}
