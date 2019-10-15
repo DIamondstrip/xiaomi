@@ -1,7 +1,9 @@
 
+
+const rap2 = document.querySelector('.rap2');   
+const phpurl = 'http://10.31.155.80/mi/xiaomi/php/';
 $.ajax({
-    type: 'post',
-    url: 'http://localhost/mi/php/select.php',
+    url: phpurl+'select.php',
     dataType: 'json'
 }).done(function (arrdata) {
     let strbanner = '';//banner图片
@@ -18,7 +20,7 @@ $.ajax({
     $.each(arrdata, function (index, value) {
         // banner
         if (value.type=='banner') {
-            strbanner += `<img class="img_show" src="${value.url}">`
+            strbanner += `<img class="img_show lazy" style="width:1266px;height:460px" data-original="${value.url}">`
         }
 
         // 头部广告
@@ -27,8 +29,7 @@ $.ajax({
             <div class="box">
                 <div class="dao-1">
                     <a href="javascript:;">
-                        <img
-                            src="${value.url}">
+                        <img class="lazy" style="width:160px;height:100px" data-original="${value.url}">
                     </a>
                 </div>
                 <p><a href="javascript:;">${value.title}</a></p>
@@ -40,25 +41,31 @@ $.ajax({
         // 菜单
         if(value.type=='TwoMenu'){
             strmenu += `
-            <li><a href="javascript:;" class="nei"><img src="${value.url}"><span>${value.title}</span></a></li>`
+            <li><a href="javascript:;" class="nei"><img class="lazy"  style="width:40px;height:40px" data-original="${value.url}"><span>${value.title}</span></a></li>`
         }
 
         // 广告
         if(value.type=='Advertisement'){
-            strAdv +=`<img src="${value.url}"
+            strAdv +=`<img class="lazy"  style="width:316px;height:170px" data-original="${value.url}"
             alt="小米">`
         }
 
         //手机栏
         if(value.type=='phoneAdv'){
             strPhone += `
-            <li><div class="kuai"> <div class="biaoti"> <h3>新品</h3>
-            </div><div class="kuai-1"><a href="javascript:;">
-            <img src="${value.url}" alt=""></a>
+            <li><a class="kuai" href="details.html?sid=${value.sid}" target="_blank">
+             <div class="biaoti"> 
+             <h3>新品</h3>
+            </div><div class="kuai-1">
+            <img class="lazy"  style="width:153px;height:153px" data-original="${value.url}" alt="">
             </div>
-            <p class="p1"><a href="javascript:;">${value.title}</a>
-            </p><p class="p2" style="color: #b0b0b0;">${value.details}</p>
-           <span>${value.price}元</span></div></li>
+            <p class="p1">
+            <span style="color:#333;">${value.title}</span>
+            </p><p class="p2" style="color: #b0b0b0;margin-bottom:8px;">${value.details}</p>
+           <span style="margin-top:5px;">${value.price}元</span>
+           </a>
+          
+           </li>
             `
         }
 
@@ -68,7 +75,7 @@ $.ajax({
             <li class="lili  li7">
             <div class="tuban">
                 <a href="javascript:;">
-                    <img src="${value.url}"
+                    <img class="lazy"  style="width:150px;height:150px" data-original="${value.url}"
                         alt="">
                 </a>
             </div>
@@ -88,7 +95,7 @@ $.ajax({
     if(value.type=='remenall'){
             strremenall +=`
             <div class="youx-1"><a href="javascript:;">
-             <img src="${value.url}"alt="">
+             <img class="lazy" style="width:80px;height:80px" data-original="${value.url}"alt="">
              </a>
              </div>
             <h3><a href="javascript:;">${value.title}</a></h3>
@@ -102,7 +109,7 @@ $.ajax({
             <li class="lili  li7">
             <div class="tuban">
                 <a href="javascript:;">
-                    <img src="${value.url}"
+                    <img class="lazy" style="width:150px;height:150px" data-original="${value.url}"
                         alt="">
                 </a>
             </div>
@@ -123,7 +130,7 @@ $.ajax({
             strTvall+=`
             <div class="youx-1">
             <a href="javascript:;">
-                <img src="${value.url}"
+                <img class="lazy" style="width:80px;height:80px" data-original="${value.url}"
                     alt="">
             </a>
         </div>
@@ -154,4 +161,13 @@ $.ajax({
 
     new lunbo().init();
     new lunbo().dianqitab();
+
+
+
+    //懒加载 添加lazy类  真实的图片路径添加到data-original  设置图片的宽高
+    $(function () { //页面加载完成
+            $("img.lazy").lazyload({
+                effect: "fadeIn" //效果方式
+            });
+        });
 });

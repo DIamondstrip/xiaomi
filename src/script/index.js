@@ -87,3 +87,21 @@ class lunbo {
     }
 }
 
+class details{
+    constructor(){
+
+    }
+
+    init(){
+        let _this = this;
+        $(window).on('scroll',function(){
+            let $top=$(window).scrollTop();
+            $('title').html($top);
+            if($top>=210){
+                $('#de_onav').addClass('nav_fix');
+            }else{
+                $('#de_onav').removeClass('nav_fix')
+            }
+        });
+    }
+}
