@@ -34,7 +34,7 @@ $.ajax({
         strheaderAdv += `</ul></div></div>`
         $('.xiaomiphone').html(strheaderAdv);
 })    
-// 头部
+// 头部结束
 $.ajax({
     url: phpurl + 'details.php',
     data: {
@@ -42,7 +42,7 @@ $.ajax({
     },
     dataType: 'json'
 }).done(function (arrdata) {
-    smallpic.src = arrdata.url;
+    // smallpic.src = arrdata.url;
     titleName.innerHTML = arrdata.title;
     information.innerHTML = arrdata.details;
     de_title.innerHTML=arrdata.title;
@@ -50,23 +50,40 @@ $.ajax({
 
     let de_price =[];
     let de_Model =[];
+    let de_banner = [];
 
     let strde_price = '';
+    let strde_banner = '';
+    let jjj = 0;
     de_Model=arrdata.Model.split(',')
     de_price=arrdata.Modelprice.split(',')
-    console.log(de_price)
-    console.log(de_Model)
+    de_banner=arrdata.urls.split(',')
+  
     $.each(de_Model, function (index, value) {
         strde_price+=`
         <div class="usechoose">
              <span class="Model">${value}</span>
              <span class="Modelprice">${de_price[index]}元</span>
         </div>
-        `
+        `   
     })
+
+    //轮播
+    $.each(de_banner,function(index,value){
+        strde_banner+=`
+        <img class="de_bannershow" id="smallpic" src="${value}" alt="">`
+        jjj = index+1;
+    })
+    strde_banner+=` <div class="de_lunbo">`
+    for(let i=0;i<jjj;i++){
+        strde_banner+=`<a href="javascript:;" class=""></a>`
+    }
+    strde_banner+=`</div>`
     let strprice = `${arrdata.price}元 <del>${arrdata.oldprice}元</del>`;//价格
     $('.pro-choose').html(strde_price);
     $('.pro-price span').html(strprice);
+    $('.de_vive').html(strde_banner)
+    $('title').html(arrdata.title);
 
     new details().init();
 });

@@ -1195,6 +1195,14 @@ small{
     background: #ccc;
     overflow: hidden;
 }
+.gouwulist_top>span{
+    display: inline-block;
+    height: 70px;
+    line-height: 72px;
+    font-size: 16px;
+}
+
+
 .gouwulist_top{
     height: 70px;
     margin-top:35px;
@@ -1209,11 +1217,20 @@ small{
     /* background: yellow; */
 }
 .shop_content{
-    height: 86px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    background:#ccc ;
+    overflow: hidden;
 }
-.shop_content>input{
+.shop_content:first-child{
+    margin-top: -7px;
+}
+.content1{
+    margin-top:10px;
+    background: white;
+    width: 1226px;
+    height: 95px;
+    
+}
+.gouwulist_top>input,.shop_content>.content1>input{
     float: left;
     width: 20px;
     height: 20px;
@@ -1222,6 +1239,7 @@ small{
 .shop_content .good_info{
     float: left;
     margin: 7px 0 0 20px;
+    width: 231px;
 }
 .shop_content .good_info img{
     width: 80px;
@@ -1237,15 +1255,16 @@ small{
 }
 .shop_content .single_price{
     float: left;
+    width: 70px;
     color: #000;
     font-size: 12px;
-    margin: 28px 0 0 145px;
+    margin: 40px 0 0 145px;
 }
 .shop_content .number{
     width: 74px;
     height: 28px;
     float: left;
-    margin: 20px 0 0 80px;
+    margin: 40px 0 0 80px;
 }
 .shop_content .number input{
     width: 30px;
@@ -1269,12 +1288,13 @@ small{
 }
 .shop_content .total_price{
     float: left;
+    width: 80px;
     color: #000;
     font-size: 12px;
-    margin: 28px 0 0 80px;
+    margin: 40px 0 0 80px;
 }
 .shop_content .opecation{
-    margin: 13px 0 0 115px;
+    margin: 40px 0 0 57px;
     float: left;
 }
 .shop_content .opecation button{
@@ -1347,11 +1367,33 @@ small{
     overflow: hidden;
     margin-top: 20px;
     float: left;
+    position: relative;
 }
-.de_vive img{
+.de_banneractive{
     width: 100%;
     height: 100%;
+    display: none;
 }
+.de_bannershow{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.de_lunbo a {
+    display: inline-block;
+    background: #ccc;
+    width: 50px;
+    border-radius: 1px;
+    border: 0;
+    height: 2px;
+    margin: 0px 4px;
+
+}
+.de_lunbo a.de_ula{
+    background: #a3a3a3;
+}
+
 .de_info{
     width: 606px;
     height: 827px;
@@ -1527,4 +1569,11 @@ small{
     border-bottom: 1px solid #e0e0e0;
     -webkit-box-shadow: 0px 5px 5px rgba(0,0,0,0.07);
     box-shadow: 0px 5px 5px rgba(0,0,0,0.07);
+}
+.de_lunbo{
+    width: 100%;
+    height:18px;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
 }

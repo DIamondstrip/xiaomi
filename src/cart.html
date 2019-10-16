@@ -16,61 +16,14 @@
         <div class="header_top center"></div>
     </header>
 
-    <section class="cart_middle ">
-        <div class="gouwulist_top center">
-        </div>
+    <section class="cart_middle" id="cart_box">
+        <div class="gouwulist_top center" style="margin-top: 0;"><input type="checkbox" class="allselect" checked><span class="cart_allp" style="margin-left: 30px;">全选</span><span class="cart_name" style="margin-left: 100px;">商品名称</span><span class="cart_price" style="margin-left: 242px;">单价</span><span class="cart_num" style="margin-left: 123px;">数量</span><span class="cart_son" style="margin-left: 109px;">小计</span><span class="cart_caozuo" style="margin-left: 99px;">操作</span></div>
         <div class="gouwulist_middle center">
             <div class="shop_content">
-                <input type="checkbox" checked>
-                <div class="good_info">
-                    <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1560238127.40319869.png?thumb=1&w=80&h=80"
-                        alt="">
-                    <p>小米手环4 NFC版 黑色</p>
-                    <div>
-                        <p>品牌:小米</p>
-                        <p>尺寸:S</p>
-                        <p>颜色:黑色</p>
-                    </div>
-                </div>
-                <p class="single_price">￥229</p>
-                <div class="number">
-                    <button class="del">-</button>
-                    <input type="text" class="good_num" value="1">
-                    <button class="add">+</button>
-                </div>
-                <p class="total_price">￥229</p>
-                <div class="opecation">
-                    <button class="edit">修改</button>
-                    <button class="remove">移除</button>
-                </div>
+               
+                
+                
             </div>
-            <div class="shop_content">
-                <input type="checkbox" checked>
-                <div class="good_info">
-                    <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1560238127.40319869.png?thumb=1&w=80&h=80"
-                        alt="">
-                    <p>小米手环4 NFC版 黑色</p>
-                    <div>
-                        <p>品牌:小米</p>
-                        <p>尺寸:S</p>
-                        <p>颜色:黑色</p>
-                    </div>
-                </div>
-                <p class="single_price">￥229</p>
-                <div class="number">
-                    <button class="del">-</button>
-                    <input type="text" class="good_num" value="1">
-                    <button class="add">+</button>
-                </div>
-                <p class="total_price">￥229</p>
-                <div class="opecation">
-                    <button class="edit">修改</button>
-                    <button class="remove">移除</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="gouwulist_bottom center"></div>
         </div>
 
     </section>
@@ -219,6 +172,13 @@
             <div class="bottom-logo">探索黑科技，小米为发烧而生</div>
         </div>
     </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="script/cart_render.js"></script>
+    <script src="script/cart.js"></script>
+    
 </body>
 
 </html>
