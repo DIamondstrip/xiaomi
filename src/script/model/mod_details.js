@@ -11,6 +11,20 @@ define(['jquery', 'jqcookie'], function () {
         timer: null,
         init: function () {
             let _this=this;
+
+            var uid = null;
+            uid = JSON.parse(localStorage.getItem('xingming'));
+            if(uid!=null){
+                $('.left-1').html(`
+                <a href="javascript:;">${uid}</a>
+                    <span>|</span>
+                    <a href="javascript:;" class="zhuxiao">注销</a>
+                    <span>|</span>
+                    <a href="javascript:;">消息通知</a>
+                `)
+            }
+
+
             // 头部
             $.ajax({
                 url: this.phpurl + 'select.php',
@@ -90,6 +104,12 @@ define(['jquery', 'jqcookie'], function () {
                 $('.de_vive').html(strde_banner)
                 $('title').html(arrdata.title);
 
+                $('.zhuxiao').on('click',function(){
+                    if (confirm('你确定要注销？')) {
+                        localStorage.removeItem('xingming');
+                        location.reload();
+                    }
+                })
 
 
                 //取值

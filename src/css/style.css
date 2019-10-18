@@ -1213,8 +1213,6 @@ small{
     line-height: 72px;
     font-size: 16px;
 }
-
-
 .gouwulist_top{
     height: 70px;
     margin-top:35px;
@@ -1223,9 +1221,9 @@ small{
 
 .gouwulist_middle{
     background: white;
-    margin: 1px;
+    /* margin: 1px; */
     overflow: hidden;
-    margin-left: 146px;
+    /* margin-left: 146px; */
     /* background: yellow; */
 }
 .shop_content{
@@ -1241,6 +1239,42 @@ small{
     width: 1226px;
     height: 95px;
     
+}
+.zongji{
+    height: 50px;
+    background: white;
+    margin: 5px auto;
+    line-height: 50px;
+}
+.zongjia{
+    text-decoration: none;
+    color: #757575;
+    font-size: 14px;
+    margin-left: 32px;
+}
+.zongjiem{
+    text-decoration: none;
+    font-size: 30px;
+    font-style: normal;
+}
+.overbtn{
+width: 202px;
+height: 50px;
+float: right;
+background: #ff6700;
+font-size: 18px;
+color: white;
+text-align: center;
+line-height: 50px;
+border: 0;
+
+}
+.zongjisp{
+    color: #ff6700;
+    font-weight: bolder;
+    font-size: 14px;
+    float: right;
+    margin-right: 50px;
 }
 .gouwulist_top>input,.shop_content>.content1>input{
     float: left;

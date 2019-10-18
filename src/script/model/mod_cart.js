@@ -44,6 +44,7 @@ define(['jquery', 'jqcookie'], function () {
                         _this.allcheck();
                         _this.sun();
                         _this.delete();
+                        _this.priceall();
                     });
 
                 }
@@ -61,6 +62,7 @@ define(['jquery', 'jqcookie'], function () {
                 } else {
                     $('.shop_content input').not('.good_num').prop('checked', false);//设置属性
                 }
+                _this.priceall();
             });
 
             let inputslength = $('.shop_content input').not('.good_num').size();
@@ -70,6 +72,7 @@ define(['jquery', 'jqcookie'], function () {
                 } else {
                     $('.allselect').prop('checked', false);
                 }
+                _this.priceall();
             });
 
 
@@ -86,6 +89,7 @@ define(['jquery', 'jqcookie'], function () {
                 $(this).parents('.content1').find('.number input').val($count);
                 $(this).parents('.content1').find('.total_price').html(_this.singlegoodsprice($(this)));//改变后的价格
                 _this.setcookie($(this));
+                _this.priceall();
             })
 
             //增加
@@ -98,6 +102,7 @@ define(['jquery', 'jqcookie'], function () {
                 $(this).parents('.content1').find('.number input').val($count);
                 $(this).parents('.content1').find('.total_price').html(_this.singlegoodsprice($(this)));//改变后的价格
                 _this.setcookie($(this));
+                _this.priceall();
 
             });
             //直接设置
@@ -118,6 +123,7 @@ define(['jquery', 'jqcookie'], function () {
                 $(this).parents('.content1').find('.total_price').html(_this.singlegoodsprice($(this)));//改变后的价格
                 _this.setcookie($(this));
             });
+            _this.priceall();
         },
 
         //删除
@@ -129,7 +135,22 @@ define(['jquery', 'jqcookie'], function () {
                     $(this).parent().parent().remove();//通过当前点击的元素找到整个一行列表，删除
                 }
                 _this.delgoodslist($(this).parents('.content1').attr('data-sid'), _this.arrsid);
+                _this.priceall();
             });
+        },
+         priceall:function(){
+            var $sum=0;//总价的初始值
+            var $count=0;
+            console.log($('.content1 input'))
+            $('.content1:visible').each(function(index,element){
+              if($(element).find('.content1 input:checked')){
+                $sum += parseInt($(element).find('.number').find('input').val());
+                $count += parseInt($(element).find('.total_price').html());
+              }
+            });
+            
+            $('.jianjian').html($sum);//共选择几件商品
+            $('.zongjiem').html($count);
         },
         delgoodslist: function (sid, arrsid) {//sid：当前删除的sid，arrsid:cookie的sid的值
             var $index = -1;

@@ -5,6 +5,18 @@ define(['jquery', 'lazyload'], function () {
         phpurl: 'http://10.31.155.80/mi/xiaomi/php/',
         init: function () {
             let _this_ = this;
+            var uid = null;
+            uid = JSON.parse(localStorage.getItem('xingming'));
+            if(uid!=null){
+                $('.left-1').html(`
+                <a href="javascript:;">${uid}</a>
+                    <span>|</span>
+                    <a href="javascript:;" class="zhuxiao">注销</a>
+                    <span>|</span>
+                    <a href="javascript:;">消息通知</a>
+                `)
+            }
+            
             $.ajax({
                 url: this.phpurl + 'select.php',
                 dataType: 'json'
@@ -168,6 +180,14 @@ define(['jquery', 'lazyload'], function () {
                         effect: "fadeIn" //效果方式
                     });
                 });
+
+                $('.zhuxiao').on('click',function(){
+                    if (confirm('你确定要注销？')) {
+                        localStorage.removeItem('xingming');
+                        location.reload();
+                    }
+                })
+
                 let indexobj=
                 { 
                 banner: document.querySelector('.banner'),
