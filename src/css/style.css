@@ -1188,7 +1188,19 @@ small{
 }
 .header_top{
     height: 74px;
-    background: yellow;
+    background: #ff6700;
+}
+.cart_contianer {
+    height: 100px;
+    background: #ff6700;
+    overflow: hidden;
+}
+
+.cart_logo {
+    width: 49px;
+    height: 49px;
+    margin: 25px auto ;
+    background:#ff6700;
 }
 .cart_middle{
     width: 100%;
@@ -1369,16 +1381,16 @@ small{
     float: left;
     position: relative;
 }
-.de_banneractive{
+.de_vive>img{
+    position: absolute;
     width: 100%;
     height: 100%;
-    display: none;
+    opacity: 0;
 }
-.de_bannershow{
-    width: 100%;
-    height: 100%;
-    display: block;
+.de_vive>img:first-child{
+    opacity: 1;
 }
+
 
 .de_lunbo a {
     display: inline-block;
@@ -1390,7 +1402,7 @@ small{
     margin: 0px 4px;
 
 }
-.de_lunbo a.de_ula{
+.de_lunbo a:first-child{
     background: #a3a3a3;
 }
 
@@ -1577,3 +1589,75 @@ small{
     bottom: 10px;
     text-align: center;
 }
+
+.lo_header{
+    height: 98px;
+    /* background: #ff6700; */
+    overflow: hidden;
+}
+.lo_tou{
+    width: 200px;
+    height: 49px;
+    margin: 20px 49px;
+}
+.lo_navtab{
+    width: 410px;
+    height: 83px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background: white;
+    font-size: 24px;
+    line-height: 83px;
+    text-align: center;
+    color: #ff6700;
+}
+.de_login{
+    width: 410px;
+    height: 416px;
+    margin: 0 auto;
+    background: white;
+    /* background: brown; */
+}
+#username{
+    display: block;
+    width: 364px;
+    height: 48px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    outline: none;
+}
+#password{
+    display: block;
+    width: 364px;
+    height: 48px;
+    margin: 20px auto;
+    outline: none;
+}
+#login{
+    background-color: #ff6700;
+    border: 0;
+    display: block;
+    width: 348px;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+.de_box{
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    margin-left: 179px;
+}
+.outer-link{
+    font-size: 14px;
+    text-decoration: none;
+    color: #999;
+}
+

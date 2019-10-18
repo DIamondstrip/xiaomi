@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            body {
+                background: #f5f5f5;
+            }
+    
+            .contianer {
+                width: 850px;
+                min-height: 600px;
+                margin: 60px auto 40px;
+                background: #fff;
+                overflow: hidden;
+            }
+    
+            .logo {
+                width: 49px;
+                height: 49px;
+                margin: 15px auto ;
+                background:#ff6700;
+            }
+    
+            #registerform {
+                width: 370px;
+                height: 248px;
+                margin: 0 240px;
+                position: relative;
+    
+            }
+    
+            input {
+                outline: none;
+            }
+    
+            .input-wrap {
+                position: relative;
+            }
+    
+            #registerform .input {
+                width: 348px;
+                height: 46px;
+                line-height: 46px;
+                border: 1px solid #e0e4e7;
+                vertical-align: middle;
+                font-size: 12px;
+                padding-left: 10px;
+                margin-bottom: 20px;
+            }
+    
+            .wrong {
+                width: 240px;
+                line-height: 20px;
+                height: 20px;
+                color: red;
+                font-size: 12px;
+                position: absolute;
+                top: 13px;
+                right: -240px;
+            }
+    
+            .yzm {
+                width: 100px;
+                height: 44px;
+                line-height: 44px;
+                border: 1px solid #e0e4e7;
+                border-left: none;
+                position: absolute;
+                right: 20px;
+                top: 0;
+                text-align: center;
+                color: #484848;
+                cursor: pointer;
+            }
+    
+            .agreement {
+                font-size: 14px;
+                color: #666;
+            }
+    
+            .agreement a {
+                color: #ff6700;
+            }
+    
+            .agreement a:hover {
+                text-decoration: underline;
+            }
+    
+            .sub {
+                width: 360px;
+                height: 50px;
+                line-height: 50px;
+                margin-top: 10px;
+                margin-bottom: 40px;
+                font-size: 20px;
+                background: #ff6700;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+    
+            .have {
+                text-align: right;
+            }
+    
+            .have a {
+                color: #ff6700;
+            }
+    
+            /* 最下面的进行许可 */
+            #nb-footer {
+                padding: 10px 0 50px 0;
+                margin: 0 auto;
+                z-index: 9;
+                position: relative;
+            }
+    
+            .nubia-copyright {
+                width: 1000px;
+                color: #ccc;
+                position: relative;
+                font-size: 12px;
+                text-align: center;
+                margin: 0 auto;
+            }
+    
+            .nubia-copyright a {
+                color: #ccc;
+                font-size: 12px;
+                display: inline-block;
+                margin-right: 20px;
+                transition: color .3s ease-in-out;
+            }
+    
+            .nubia-copyright a:hover {
+                text-decoration: underline;
+                color: #000;
+            }
+        </style>
+        <script src="script/require.js" data-main="script/require.config" id="current-page" target-module="script/model/mod_register.js" defer async="true" ></script>
+</head>
+<body>
+        <div class="contianer">
+                <div class="logo">
+                    <a href="http://10.31.155.80/mi/xiaomi/src/">
+                        <img src="img/mi-logo.png" alt=""></a>
+                    
+                </div>
+                <form action="http://10.31.155.80/mi/xiaomi/php/registry.php" method="post" id="registerform">
+                    <div class="input-wrap">
+                        <input type="text" class="input" name="username" id="username" placeholder="请输入账号,账号应为手机号码"><span class="wrong"></span>
+                    </div>
+                    <div class="input-wrap">
+                            <input type="text" class="input" name="email" id="email" placeholder="请输入e-mail">
+                            <span class="wrong"></span>
+                        </div>
+                    <div class="input-wrap">
+                        <input type="password" class="input" name="password" id="password" placeholder="密码为6-16个字符（数字、字母、符号至少包含两种）">
+                        <span class="wrong" style="top:0"></span>
+                        <span class="wrong" style="top:29px"></span>
+                    </div>
+                    <div class="input-wrap">
+                            <input type="password" class="input" name="" id="rpassword" placeholder="确认密码">
+                            <span class="wrong"></span>
+                        </div>
+                    <br>
+                    <input type="checkbox" name="" id="agreement" title="需要同意《用户服务协议》">
+                    <label for="agreement" class="agreement"> 我已阅读并接受
+                        <a href="javascript:;" title="用户协议" target="_blank">用户协议</a>和
+                        <a href="javascript:;" title="隐私政策" target="_blank">隐私政策</a></label>
+                    <input type="submit" class="sub" name="submit" id="registry" value="提    交">
+                    <p class="have">已有账号，<a href="login.html">直接登录</a>
+                    </p>
+                </form>
+        
+            </div>
+            <!-- 尾部 -->
+            
+</body>
+</html>
